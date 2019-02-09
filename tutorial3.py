@@ -7,7 +7,11 @@ myapp = App()
 green = Color(0x00ff00, 1)
 black = Color(0, 1)
 noline = LineStyle(0, black)
-
+# Sounds
+pew1_asset = SoundAsset("sounds/pew1.mp3")
+pew1 = Sound(pew1_asset)
+pop_asset = SoundAsset("sounds/reappear.mp3")
+pop = Sound(pop_asset)
 # a rectangle asset and sprite to use as background
 bg_asset = RectangleAsset(myapp.width, myapp.height, noline, green)
 bg = Sprite(bg_asset, (0,0))
@@ -37,10 +41,12 @@ def spaceKey(event):
 
 # Handle the "reverse" key
 def reverseKey(event):
+    pop.play()
     reverse(ball)
 
 # Handle the mouse click
 def mouseClick(event):
+    pew1.play()
     ball.x = event.x
     ball.y = event.y
 # Set up event handlers for the app

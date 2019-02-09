@@ -23,5 +23,13 @@ ball.go = True
 # reverse - change the ball direction
 def reverse(b):
     b.direction *= -1
-myapp.run()
+    
+# Set up function for handling screen refresh
+def step():
+    if ball.go:
+        ball.x += ball.direction
+        if ball.x + ball.width > myapp.width or ball.x < 0:
+            ball.x -= ball.direction
+            reverse(ball)
+myapp.run(step)
 

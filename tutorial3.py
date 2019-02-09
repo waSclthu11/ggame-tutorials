@@ -18,7 +18,7 @@ ball = Sprite(ball_asset, (0, 0))
 # Original image is too big. Scale it to 1/10 its original size
 ball.scale = 0.1
 # custom attributes
-ball.direction = 1
+ball.direction = 5
 ball.go = True
 # reverse - change the ball direction
 def reverse(b):

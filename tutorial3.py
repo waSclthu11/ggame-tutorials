@@ -20,5 +20,8 @@ ball.scale = 0.1
 # custom attributes
 ball.direction = 1
 ball.go = True
+# reverse - change the ball direction
+def reverse(b):
+    b.direction *= -1
 myapp.run()
 
